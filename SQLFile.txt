@@ -1,0 +1,64 @@
+create database test;
+use test;
+
+create table admin(
+username varchar(30) not null,
+password varchar(30) not null);
+
+select * from admin;
+insert into admin(username,password) values('admin','admin');
+
+create table account(
+id_number varchar(30) not null,
+student_name varchar(30) not null,
+password varchar(30) not null,
+status varchar(30) not null);
+
+insert into account(id_number,student_name,password,status) values('1','Ananya','1234','no');
+insert into account(id_number,student_name,password,status) values('2','Bijila','1234','no');
+insert into account(id_number,student_name,password,status) values('3','Prithvin','1234','no');
+insert into account(id_number,student_name,password,status)  values('4','Kiran','1234','no');
+insert into account(id_number,student_name,password,status) values('5','Bharat','1234','no');
+
+
+select * from account;
+
+
+
+SELECT * FROM account WHERE id_number ='1' AND password = '1234' AND status = 'no';
+
+
+
+
+create table candidate(
+candidate_id varchar(30) not null,
+candidate_name varchar(60) not null,
+position_id integer not null,
+position_name varchar(30) not null,
+points integer not null);
+
+select * from candidate;
+SELECT * FROM candidate where position_id='1' order by -points limit 1;
+
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P1','Rahul',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P2','Sita',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P3','Raj',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P4','Ananya',1,'President',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP1','Smita',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP2','Sourav',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('VP3','Kiran',2,'VicePresident',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('S1','Gaurav',3,'Secretary',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('S2','Bharat',3,'Secretary',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('A1','Anu',4,'Auditor',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('A2','Brijila',4,'Auditor',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('T1','Pooja',5,'Treasurer',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('T2','Rahul',5,'Treasurer',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P1','Pinki',6,'Pio',0);
+insert into candidate(candidate_id,candidate_name,position_id,position_name,points) values('P2','Satya',6,'Pio',0);
+
+truncate candidate;
+select * from candidate;
+
+select candidate_name from candidate where position_id='1';
+
+commit;
